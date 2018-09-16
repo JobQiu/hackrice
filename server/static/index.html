@@ -1,18 +1,87 @@
-<html>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<div>edges2cats</div>
-<div id="edges2cats"></div>
+	<meta charset="utf-8">
+	<title>Modern Town - Responsive HTML5 Template</title>
 
-<div>edges2shoes</div>
-<div id="edges2shoes"></div>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+   	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+	*{margin:0px;padding:0px;list-style:none;text-decoration:none;} /*通配符，个人习惯。*/
+	.div1{color: #ffa400;font-size: 100px;font-family:"Times New Roman";}
+	.div2{color: #FFFFFF;font-size: 30px; font-family:"Times New Roman";}
+	.div3{font-size: 40px;}
+	</style>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-<div>edges2handbags</div>
-<div id="edges2handbags"></div>
 
-<div>facades</div>
-<div id="facades"></div>
+<!-- Navigation section
+================================================== -->
+<section class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
+	<div class="container">
 
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">Drawkemon</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right main-navigation">
+				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
+				<li><a href="#blog" class="smoothScroll">DEMO</a></li>
+				<li><a href="#testimonial" class="smoothScroll">TESTIMONIALS</a></li>
+			</ul>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- about section
+================================================== -->
+<section id="about" class="paralla-section">
+	<div class="container">
+        
+        <div class="row">
+			
+			<div class="col-md-6 col-sm-12">
+				<div class="about-des">
+					<h4>New Community Mall</h4>
+					<h3>Going to the NEXT Level</h3>
+					<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+				</div>
+			</div>
+            
+            <div class="col-md-6 col-sm-12">
+				<img src="images/pokemon2.png" class="img-responsive" alt="about img 2">
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- blog section
+================================================== -->
+<section id="blog" class="paralla-section" >
+
+<center>
+<div class = "div3" style="color: #FFFFFF">Draw your own pokemon!!!!</div>
+<div id="edges2cats" style="opacity: 0.8"></div>
+</center>
 <script src="deeplearn-0.3.15.js"></script>
 <script>
 
@@ -35,7 +104,7 @@ function main() {
 
   create_editor({
     name: "edges2cats",
-    weights_url: "/models/edges2cats_AtoB.pict",
+    weights_url: "/models/pokemon_model_0.bin",
     mode: "line",
     clear: "#FFFFFF",
     colors: {
@@ -46,61 +115,6 @@ function main() {
     initial_input: "/edges2cats-input.png",
     initial_output: "/edges2cats-output.png",
     sheet_url: "/edges2cats-sheet.jpg",
-  })
-
-  create_editor({
-    name: "edges2shoes",
-    weights_url: "/models/edges2shoes_AtoB.pict",
-    mode: "line",
-    clear: "#FFFFFF",
-    colors: {
-      line: "#000000",
-      eraser: "#ffffff",
-    },
-    draw: "#000000",
-    initial_input: "/edges2shoes-input.png",
-    initial_output: "/edges2shoes-output.png",
-    sheet_url: "/edges2shoes-sheet.jpg",
-  })
-
-  create_editor({
-    name: "edges2handbags",
-    weights_url: "/models/edges2handbags_AtoB.pict",
-    mode: "line",
-    clear: "#FFFFFF",
-    colors: {
-      line: "#000000",
-      eraser: "#ffffff",
-    },
-    draw: "#000000",
-    initial_input: "/edges2handbags-input.png",
-    initial_output: "/edges2handbags-output.png",
-    sheet_url: "/edges2handbags-sheet.jpg",
-  })
-
-  create_editor({
-    name: "facades",
-    weights_url: "/models/facades_BtoA.pict",
-    mode: "rect",
-    colors: {
-      background: "#0006d9",
-      wall: "#0d3dfb",
-      door: "#a50000",
-      "window": "#0075ff",
-      "window sill": "#68f898",
-      "window head": "#1dffdd",
-      shutter: "#eeed28",
-      balcony: "#b8ff38",
-      trim: "#ff9204",
-      cornice: "#ff4401",
-      column: "#f60001",
-      entrance: "#00c9ff",
-    },
-    clear: "#0d3dfb",
-    draw: "#0075ff",
-    initial_input: "/facades-input.png",
-    initial_output: "/facades-output.png",
-    sheet_url: "/facades-sheet.jpg",
   })
 
   window.requestAnimationFrame(frame)
@@ -412,7 +426,7 @@ Editor.prototype = {
               // eraser mode
               this.buffer.lineWidth = 15
             } else {
-              this.buffer.lineWidth = 1
+              this.buffer.lineWidth = 5
             }
             this.buffer.moveTo(last.x, last.y)
             this.buffer.lineTo(cur.x, cur.y)
@@ -1019,6 +1033,76 @@ document.addEventListener("mouseup", function(e) {
 })
 
 </script>
+</section>
+
+<!-- Testimonial section
+================================================== -->
+<section id="testimonial" class="parallax-section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Service Owl Carousel section
+      ================================================== -->
+      <div id="owl-testimonial" class="owl-carousel">
+
+        <div class="item">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <img src="images/testimonial-img-1.jpg" class="img-responsive img-circle" alt="testimonial img">
+              <h2>LINDA - City Planner</h2>
+              <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <img src="images/testimonial-img-2.jpg" class="img-responsive img-circle" alt="testimonial img">
+              <h2>TANYA - Architect</h2>
+              <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <img src="images/testimonial-img-3.jpg" class="img-responsive img-circle" alt="testimonial img">
+              <h2>SANDAR - Developer</h2>
+              <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <img src="images/testimonial-img-3.jpg" class="img-responsive img-circle" alt="testimonial img">
+              <h2>SANDAR - Developer</h2>
+              <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Javascript 
+================================================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/custom.js"></script>
 
 </body>
 </html>
